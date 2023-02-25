@@ -1,0 +1,21 @@
+h1 {
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 5vh;
+    margin-top: 7vh;
+    font-size: 3.5rem;
+}
+.card-body p {
+    display: inline-block;
+    margin: 0px;
+    margin-left: 1vh;
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container .card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

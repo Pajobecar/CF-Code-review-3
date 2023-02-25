@@ -1,0 +1,42 @@
+<h1>Product details</h1>
+<div class="container">
+<ng-template [ngIf]="product.availability == true" [ngIfElse]="none">
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{product.description}}</li>
+                    <li class="list-group-item text-danger">Price: {{product.price}}$</li>
+                </ul>
+                <div class="card-body">
+                    <a class="btn btn-success" routerLink="/menu">Back to Menu</a>
+                    <p class="btn btn-danger" (click)="addToCart()">Order</p>
+                </div>
+            </div>
+
+        </ng-template>
+
+        <ng-template #none>
+
+            <div class="card" style="width: 18rem;">
+                <img src="{{ product.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{product.description}}</li>
+                  
+                </ul>
+                <div class="card-body">
+                    
+                    <p class="text-danger">This item is currently not available</p>
+                </div>
+            </div>
+        </ng-template>
+       
+  </div>

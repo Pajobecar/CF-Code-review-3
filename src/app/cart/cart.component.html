@@ -1,0 +1,40 @@
+<div class="container" id="cart">
+  <ul class="list-group" id="ul1">
+    <li class="list-group-item">Cart-{{cart.length}} item(s).</li>
+    <li class="list-group-item cont" *ngFor="let val of cart"><img src="{{val.image}}" class="cartimage">
+      <p class="imgtext">{{val.description}}</p>
+      <p class="text-danger price">Price:{{val.price}}$</p>
+    </li>
+
+  </ul>
+  <ul class="list-group" id="ul2">
+    <li class="list-group-item li">Summary</li>
+    <li class="list-group-item">Service(10%): &#32; &#32; &#32; {{service}}$</li>
+    <li class="list-group-item"><span>
+        <p id="tot">Total amount: &#32; &#32; &#32; {{sum}}$</p>
+        <p id="vat">(including VAT)</p>
+      </span></li>
+    <li class="list-group-item dis" *ngIf="sum > 40">Discount(15%): &#32; &#32; &#32;{{discount}}$</li>
+
+  </ul>
+</div>
+<div class="container">
+  <h1>Order Form</h1>
+  <p>Please fill up the info for the delivery</p>
+  <hr>
+  <form [formGroup]="customer" (ngSubmit)="onSubmit()">
+    <label>
+      Name:
+      <br>
+      <input class="rem" type="text" formControlName="name">
+    </label>
+    <br>
+    <label>
+      Adress
+      <br>
+      <input class="rem" type="text" formControlName="adress">
+    </label>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Order">
+  </form>
+</div>
